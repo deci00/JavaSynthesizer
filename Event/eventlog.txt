@@ -1,0 +1,6 @@
+Thu Jan 24 20:09:53 CET 2013 : Exception: javax.sound.midi.MidiUnavailableException: The specified device is already in use.  Wait until it is free, and then try again. : Errormessage: Cant read from mididevice
+Thu Jan 24 20:10:12 CET 2013 : Exception: javax.sound.midi.MidiUnavailableException: No transmitter available : Errormessage: Cant read from mididevice
+Thu Jan 24 20:10:14 CET 2013 : Exception: javax.sound.midi.MidiUnavailableException: MIDI OUT transmitter not available : Errormessage: Cant read from mididevice
+Thu Jan 24 20:10:15 CET 2013 : Exception: javax.sound.midi.MidiUnavailableException: MIDI OUT transmitter not available : Errormessage: Cant read from mididevice
+Thu Jan 24 20:10:16 CET 2013 : Exception: javax.sound.midi.MidiUnavailableException: MIDI OUT transmitter not available : Errormessage: Cant read from mididevice
+Fri Jan 25 22:05:41 CET 2013 : Exception: javax.imageio.IIOException: Can't read input file! : Errormessage: Unable to load synth graphics
