@@ -5,11 +5,15 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLayeredPane;
+
 import java.awt.Color;
+import java.util.Arrays;
+import java.util.List;
 
 /*
  * @author Dennis Cirillo
@@ -19,23 +23,24 @@ public class SynthKeys extends JLayeredPane implements MouseListener, MouseWheel
 
 	private static final long serialVersionUID = 1L;
 
-	// Variables to hold number of each key
+	// hold number of each key
 	private int[] white_keys = new int[29];
 	private int[] black_keys = new int[20];
 
-	// Variables to hold note numbers
-	private int[] white_notes = {36,38,40,41,43,45,47,48,50,52,53,55,57,59,60,62,64,65,67,69,71,72,74,76,77,79,81,83,84};
-	private int[] black_notes = {37,39,42,44,46,49,51,54,56,58,61,63,66,68,70,73,75,78,80,82};
+	
+	// Notes
+	private List<Integer> black_notes = Arrays.asList(37,39,42,44,46,49,51,54,56,58,61,63,66,68,70,73,75,78,80,82);
+	private List<Integer> white_notes = Arrays.asList(36,38,40,41,43,45,47,48,50,52,53,55,57,59,60,62,64,65,67,69,71,72,74,76,77,79,81,83,84);
 
-	// Variables to count what note each key will have
+	// Count what note each key will have
 	private int cw = 0;
 	private int cb = 0;
 	
-	// Images for synth key buttons
+	// Key images
 	private Icon w_keysImg = new ImageIcon("img/white_key.png");
 	private Icon b_keysImg = new ImageIcon("img/black_key.png");
 	
-	// New MSynthesizer object
+	
 	MSynthesizer synth = MSynthesizer.getInstance();
 
 	// Mouse input variables
@@ -46,7 +51,6 @@ public class SynthKeys extends JLayeredPane implements MouseListener, MouseWheel
 	private int pitchlevel = 64;
 	
 	public SynthKeys() {
-		// Call generateKeys and build synth keys
 		generateKeys();
 	}
 
@@ -58,7 +62,7 @@ public class SynthKeys extends JLayeredPane implements MouseListener, MouseWheel
 		// Create white keys and add to panel
 		for (int i = 0; i < white_keys.length; i++) {
 			JButton w_key = new JButton(w_keysImg);
-			w_key.setName(Integer.toString(white_notes[cw]));
+			w_key.setName(Integer.toString(white_notes.get(cw)));
 			w_key.setSize( new Dimension(25,140));
 			w_key.setLocation(3 + i * 25, 3);
 			w_key.setBackground(Color.white);
@@ -80,7 +84,7 @@ public class SynthKeys extends JLayeredPane implements MouseListener, MouseWheel
 				continue;
 			
 			JButton b_key = new JButton(b_keysImg);	
-			b_key.setName(Integer.toString(black_notes[cb]));
+			b_key.setName(Integer.toString(black_notes.get(cb)));
 			b_key.setSize( new Dimension(21,100));			
 			b_key.setLocation(3 + i * 25+15, 3);		
 			b_key.setBackground(Color.black);
