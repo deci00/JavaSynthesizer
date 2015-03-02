@@ -29,16 +29,16 @@ public class SynthKeys extends JLayeredPane implements MouseListener, MouseWheel
 
 	
 	// Notes
-	private List<Integer> black_notes = Arrays.asList(37,39,42,44,46,49,51,54,56,58,61,63,66,68,70,73,75,78,80,82);
-	private List<Integer> white_notes = Arrays.asList(36,38,40,41,43,45,47,48,50,52,53,55,57,59,60,62,64,65,67,69,71,72,74,76,77,79,81,83,84);
+	private final List<Integer> black_notes = Arrays.asList(37,39,42,44,46,49,51,54,56,58,61,63,66,68,70,73,75,78,80,82);
+	private final List<Integer> white_notes = Arrays.asList(36,38,40,41,43,45,47,48,50,52,53,55,57,59,60,62,64,65,67,69,71,72,74,76,77,79,81,83,84);
 
 	// Count what note each key will have
 	private int cw = 0;
 	private int cb = 0;
 	
 	// Key images
-	private Icon w_keysImg = new ImageIcon("img/white_key.png");
-	private Icon b_keysImg = new ImageIcon("img/black_key.png");
+	private final Icon w_keysImg = new ImageIcon("img/white_key.png");
+	private final Icon b_keysImg = new ImageIcon("img/black_key.png");
 	
 	
 	MSynthesizer synth = MSynthesizer.getInstance();
